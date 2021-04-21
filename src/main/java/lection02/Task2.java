@@ -16,37 +16,19 @@ public class Task2 {
 
     public static void main(String[] args) {
 
-        System.out.println();
-        System.out.println("Задание 1");
-        System.out.println();
+        System.out.println("******************Задание 1**************************");
         System.out.println(belongingToTheSegment(a, b));
-        System.out.println();
 
-        System.out.println("********************************************");
-        System.out.println();
-        System.out.println("Задание 2");
-        System.out.println();
+        System.out.println("******************Задание 2**************************");
         printResultCheckSign(c);
-        System.out.println();
 
-        System.out.println("********************************************");
-        System.out.println();
-        System.out.println("Задание 3");
-        System.out.println();
+        System.out.println("******************Задание 3**********************");
         System.out.println(reversSign(d));
-        System.out.println();
 
-        System.out.println("********************************************");
-        System.out.println();
-        System.out.println("Задание 4");
-        System.out.println();
+        System.out.println("******************Задание 4*************************");
         printString(s, 10);
-        System.out.println();
 
-        System.out.println("********************************************");
-        System.out.println();
-        System.out.println("Задание 5");
-        System.out.println();
+        System.out.println("*******************Задание 5*************************");
         for (int i = 1; i <= 3500; i++) {
             if(leapYear(i))
                 System.out.println("Год " + i + " - високосный");
