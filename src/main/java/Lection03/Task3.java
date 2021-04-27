@@ -24,11 +24,17 @@ public class Task3 {
         printIntMultidimensionalArray(fillingInTheDiagonals(arr4));
 
         System.out.println("******************* Задание 5 *************************");
-        int[] arr5 = new int [10];
+        int[] arr5 = new int[10];
         printIntOneDimensionalArrayInLine(randomFillingTheArray(arr5));
         System.out.println("");
         System.out.println("Максимальный элемент массива равен: " + searchMax(arr5));
         System.out.println("Минимальный элемент массива равен: " + searchMin(arr5));
+
+        System.out.println("******************* Задание 6 *************************");
+        int[] arr6 = {2, 2, 2, 1, 2, 2, 10, 1};
+        printIntOneDimensionalArrayInLine(arr6);
+        System.out.println(happyTicket(arr6));
+
 
     }
 
@@ -107,23 +113,40 @@ public class Task3 {
 
     }
 
-    public static int searchMax(int[] arrForSearchMax){
+    public static int searchMax(int[] arrForSearchMax) {
         int max = Integer.MIN_VALUE;
         for (int i = 0; i < arrForSearchMax.length; i++) {
-            if(arrForSearchMax[i] > max)
+            if (arrForSearchMax[i] > max)
                 max = arrForSearchMax[i];
         }
         return max;
     }
 
-    public static int searchMin(int[] arrForSearchMin){
+    public static int searchMin(int[] arrForSearchMin) {
         int min = Integer.MAX_VALUE;
         for (int i = 0; i < arrForSearchMin.length; i++) {
-            if(arrForSearchMin[i] < min)
+            if (arrForSearchMin[i] < min)
                 min = arrForSearchMin[i];
         }
         return min;
     }
 
+    public static boolean happyTicket(int[] arr) {
+        int leftSum = arr[0];
+        int rightSum = arr[arr.length - 1];
+
+        for (int i = 1; i < arr.length - 1; i++) {
+            leftSum = leftSum + arr[i];
+            for (int j = i + 1; j < arr.length - 1; j++) {
+                rightSum = rightSum + arr[j];
+            }
+            if (leftSum == rightSum) {
+                return true;
+            }
+        }
+        return false;
+    }
+
 }
+
 
