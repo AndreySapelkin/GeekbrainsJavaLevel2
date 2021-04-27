@@ -1,4 +1,4 @@
-package Lection03;
+package lection03;
 
 import java.util.Random;
 
@@ -187,5 +187,3 @@ public class Task3 {
     }
 
 }
-
-
