@@ -35,6 +35,9 @@ public class Task3 {
         printIntOneDimensionalArrayInLine(arr6);
         System.out.println(happyTicket(arr6));
 
+        System.out.println("******************* Задание 7 *************************");
+        int[] arr7 = {2, 10, 1, 6, 4, 8};
+        printIntOneDimensionalArrayInLine(arrayOffset(arr7, -2));
 
     }
 
@@ -143,8 +146,44 @@ public class Task3 {
             if (leftSum == rightSum) {
                 return true;
             }
+            rightSum = arr[arr.length - 1];
         }
         return false;
+    }
+
+    public static int[] arrayOffsetRight(int[] arr) {
+        int buffer = arr[arr.length - 1];
+
+        for (int i = arr.length - 1; i > 0; i--) {
+            arr[i] = arr[i - 1];
+        }
+        arr[0] = buffer;
+        return arr;
+    }
+
+    public static int[] arrayOffsetLeft(int[] arr) {
+        int buffer = arr[0];
+
+        for (int i = 0; i < arr.length - 1; i++) {
+            arr[i] = arr[i + 1];
+        }
+        arr[arr.length - 1] = buffer;
+        return arr;
+    }
+
+    private static int[] arrayOffset(int[] arr7, int n) {
+
+        if (n > 0)
+            for (int i = 0; i < n; i++)
+                arrayOffsetRight(arr7);
+        else if (n < 0)
+            for (int i = 0; i < (n * -1); i++)
+                arrayOffsetLeft(arr7);
+        else {
+            return arr7;
+        }
+
+        return arr7;
     }
 
 }
