@@ -1,4 +1,4 @@
-package Lection03.online;
+package lection03.online;
 
 import java.util.Random;
 import java.util.Scanner;
