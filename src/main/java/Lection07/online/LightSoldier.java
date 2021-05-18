@@ -9,7 +9,7 @@ import Lection07.online.models.Soldier;
 
 public class LightSoldier extends Soldier {
 
-    public LightSoldier(String name, int attack, float defense, float hp) {
-        super(name, attack, defense, hp);
+    public LightSoldier(String name, int attack, float defense, float hp, String pet) {
+        super(name, attack, defense, hp, pet);
     }
 }

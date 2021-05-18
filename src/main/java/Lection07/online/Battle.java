@@ -10,8 +10,10 @@ public class Battle {
     private static int round = 1;
 
     public static void main(String[] args) throws InterruptedException {
-        LightSoldier lightSoldier = new LightSoldier("LightSoldier", 15, 25f, 100f);
-        DarkSoldier darkSoldier = new DarkSoldier("DarkSoldier", 20, 5f, 150f);
+        LightSoldier lightSoldier = new LightSoldier("LightSoldier", 15, 25f, 100f, "Dog");
+        DarkSoldier darkSoldier = new DarkSoldier("DarkSoldier", 20, 5f, 150f, "Cat");
+        Dog dog = new Dog("Tuzik", 5, 2f, 20);
+        Cat cat = new Cat("Vaska", 4, 1f, 10);
 
         lightSoldier.attack(lightSoldier);
 
@@ -21,6 +23,7 @@ public class Battle {
             System.out.println(darkSoldier.getMeInfo());
 
             lightSoldier.attack(darkSoldier);
+            cat.hostProtection(lightSoldier);
 
             if (darkSoldier.isDeadHero()) {
                 System.out.println(lightSoldier.getName() + " win!");
@@ -28,6 +31,7 @@ public class Battle {
             }
 
             darkSoldier.attack(lightSoldier);
+            dog.hostProtection(darkSoldier);
 
             if (lightSoldier.isDeadHero()) {
                 System.out.println(darkSoldier.getName() + " win!");
