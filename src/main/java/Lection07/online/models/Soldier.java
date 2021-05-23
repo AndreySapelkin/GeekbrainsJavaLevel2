@@ -1,8 +1,5 @@
 package Lection07.online.models;
 
-import Lection07.online.DarkSoldier;
-import Lection07.online.LightSoldier;
-
 import java.util.Random;
 
 /**
@@ -13,17 +10,54 @@ import java.util.Random;
 public abstract class Soldier {
 
     protected String name;
+    protected String pet;
     protected float attack;
     protected float defense;
     protected float hp;
     private Random random = new Random();
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setPet(String pet) {
+        this.pet = pet;
+    }
+
+    public void setAttack(float attack) {
+        this.attack = attack;
+    }
+
+    public void setDefense(float defense) {
+        this.defense = defense;
+    }
+
+    public void setHp(float hp) {
+        this.hp = hp;
+    }
+
+    public void setRandom(Random random) {
+        this.random = random;
+    }
+
+    public Soldier(String name, int attack, float defense, float hp, String pet) {
+        this.name = name;
+        this.pet = pet;
+        this.attack = attack;
+        this.defense = defense;
+        if (hp < 0) {
+        this.hp = -hp;
+        } else {
+            this.hp = hp;
+        }
+    }
 
     public Soldier(String name, int attack, float defense, float hp) {
         this.name = name;
         this.attack = attack;
         this.defense = defense;
         if (hp < 0) {
-        this.hp = -hp;
+            this.hp = -hp;
         } else {
             this.hp = hp;
         }
@@ -56,6 +90,10 @@ public abstract class Soldier {
 
     public String getName() {
         return name;
+    }
+
+    public String getPet() {
+        return pet;
     }
 
     public float getAttack() {

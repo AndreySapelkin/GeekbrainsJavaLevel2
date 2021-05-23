@@ -1,18 +1,7 @@
 package Lection07.online;
 
-import Lection06.Homework.Cat;
-import Lection06.online.Titan;
-
-import java.util.Scanner;
-
-/**
- * Created by Aleksandr Gladkov [Anticisco]
- * Date: 12.05.2021
- */
-
 public class Lection07 extends Object {
 
-//    private static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
 
