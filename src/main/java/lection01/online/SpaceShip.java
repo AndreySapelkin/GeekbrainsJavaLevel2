@@ -1,4 +1,4 @@
-package ru.geekbrains.java2.lessons.l1_oop;
+package lection01.online;
 
 import java.io.Serializable;
 

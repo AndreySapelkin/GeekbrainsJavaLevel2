@@ -1,4 +1,4 @@
-package ru.geekbrains.java2.lessons.l1_oop;
+package lection01.online;
 
 import java.util.Arrays;
 import java.util.Comparator;
@@ -7,7 +7,7 @@ public class Classwork {
     public static void main(String[] args) {
 //        flyingExample();
 
-        calc(10, 6, new Subtractor());
+        calc(10, 6, new lection01.online.Subtractor());
         calc(10, 6, new Calculator() {
             @Override
             public double calculate(double a, double b) {
