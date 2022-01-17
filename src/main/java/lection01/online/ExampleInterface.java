@@ -1,9 +1,9 @@
-package ru.geekbrains.java2.lessons.l1_oop;
+package lection01.online;
 
 import java.io.Closeable;
 import java.io.Serializable;
 
-public interface ExampleInterface extends Flying, Cloneable, Closeable, Serializable {
+public interface ExampleInterface extends src.main.java.lection01.online.Flying, Cloneable, Closeable, Serializable {
 //    public interface ExInt {
 //        public static interface ExExInt {
 //
@@ -22,7 +22,7 @@ public interface ExampleInterface extends Flying, Cloneable, Closeable, Serializ
     }
 
     //Java 9+
-    private void doPrivate() {
+    default void doPrivate() {
         System.out.println("PRIVATE");
     }
 
