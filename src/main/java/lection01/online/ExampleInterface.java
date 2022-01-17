@@ -3,7 +3,7 @@ package lection01.online;
 import java.io.Closeable;
 import java.io.Serializable;
 
-public interface ExampleInterface extends src.main.java.lection01.online.Flying, Cloneable, Closeable, Serializable {
+public interface ExampleInterface extends lection01.online.Flying, Cloneable, Closeable, Serializable {
 //    public interface ExInt {
 //        public static interface ExExInt {
 //
