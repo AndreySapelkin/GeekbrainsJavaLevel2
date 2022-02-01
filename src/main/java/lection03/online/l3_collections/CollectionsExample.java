@@ -42,7 +42,7 @@ public class CollectionsExample {
 //        set.add(null);
         set.addAll(Arrays.asList("June", "July", "May", "April"));
         set.remove("May");
-        set.removeAll(List.of("May", "April"));
+      /*  set.removeAll(List.of("May", "April"));*/
         set.removeIf(s -> s.length() < 5);
 //        System.out.println(set);
 
