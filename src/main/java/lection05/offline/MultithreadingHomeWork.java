@@ -4,25 +4,25 @@ import java.util.Arrays;
 
 public class MultithreadingHomeWork {
 
-    static final int size = 100000000;
+    static final int size = 100_000_000;
     static final int h = size / 2;
+    static final int HALF_SIZE = 5_000_000;
 
     public static void main(String[] args) {
 
-        calculationsInOneThread();
-        calculationsInTwoThread();
+        new MultithreadingHomeWork().calculationsInOneThread();
+        new MultithreadingHomeWork().calculationsInTwoThread();
 
     }
 
-
-    private static void calculationsInOneThread() {
-        float[] arr = new float[size];
+    private void calculationsInOneThread() {
+        float[] arr = new float[MultithreadingHomeWork.size];
         Arrays.fill(arr, 1);
 
         System.out.println("НАЧАЛО ВЫЧИСЛЕНИЙ В ОДИН ПОТОК.");
         long a = System.currentTimeMillis();
 
-        Worker runner1 = new Worker(arr);
+        Worker runner1 = new Worker(arr, 0);
         runner1.start();
 
         try {
@@ -37,7 +37,7 @@ public class MultithreadingHomeWork {
 
     }
 
-    private static void calculationsInTwoThread() {
+    private void calculationsInTwoThread() {
         System.out.println("\n");
         System.out.println("\n");
         float[] arr = new float[size];
@@ -52,8 +52,8 @@ public class MultithreadingHomeWork {
         System.arraycopy(arr, 0, subArr1, 0, h);
         System.arraycopy(arr, h, subArr2, 0, h);
 
-        Worker runner1 = new Worker(subArr1);
-        Worker runner2 = new Worker(subArr2);
+        Worker runner1 = new Worker(subArr1, 0);
+        Worker runner2 = new Worker(subArr2, HALF_SIZE);
 
         runner1.start();
         runner2.start();
@@ -74,25 +74,28 @@ public class MultithreadingHomeWork {
 
     }
 
-    static class Worker extends Thread {
-        private float[] internal;
+    class Worker extends Thread {
+        private float[] internalArr;
 
-        Worker(float[] arr) {
-            internal = arr;
+        private int index;
+
+        Worker(float[] arr, int internalIndex) {
+            internalArr = arr;
+            index = internalIndex;
         }
 
         public float[] getArr() {
-            return internal;
+            return internalArr;
         }
 
-       private void calculate(float[] f){
+       private void calculate(float[] f, int index){
            for (int i = 0; i < f.length; i++) {
-               f[i] = (float) (f[i] * Math.sin(0.2f + i / 5) * Math.cos(0.2f + i / 5) * Math.cos(0.4f + i / 2));
+               f[i] = (float) (f[i] * Math.sin(0.2f + (i + index) / 5) * Math.cos(0.2f + (i + index)/ 5) * Math.cos(0.4f + (i + index) / 2));
            }
        }
 
         public void run() {
-            calculate(internal);
+            calculate(internalArr, index);
         }
     }
 
